@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
                 Log.d("debugging", "Clicked");
-                startActivity(new Intent(LoginActivity.this, ChoseShape.class));
+                startActivity(new Intent(LoginActivity.this, CircleCalc.class));
             }
         });
     }
