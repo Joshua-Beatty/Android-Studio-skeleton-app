@@ -13,12 +13,12 @@
         android:layout_marginBottom="16dp"
         android:text="Radius"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/radiustextfield"
+        app:layout_constraintBottom_toTopOf="@+id/radiusTextField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/radiustextfield"
+        android:id="@+id/radiusTextField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="130dp"
@@ -35,7 +35,7 @@
         android:layout_marginBottom="16dp"
         android:text="Diameter"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/diametertextfield"
+        app:layout_constraintBottom_toTopOf="@+id/diameterTextField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -58,13 +58,13 @@
         android:layout_marginBottom="16dp"
         android:text="Area"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/areatextfield"
+        app:layout_constraintBottom_toTopOf="@+id/areaTextField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/diametertextfield"
+        android:id="@+id/diameterTextField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
@@ -72,7 +72,7 @@
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radiustextfield" />
+        app:layout_constraintTop_toBottomOf="@+id/radiusTextField" />
 
     <EditText
         android:id="@+id/circumfrencetextfeild"
@@ -83,10 +83,10 @@
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/diametertextfield" />
+        app:layout_constraintTop_toBottomOf="@+id/diameterTextField" />
 
     <EditText
-        android:id="@+id/areatextfield"
+        android:id="@+id/areaTextField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
