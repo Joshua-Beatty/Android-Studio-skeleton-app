@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="87dp"
         android:layout_marginBottom="84dp"
-        android:text="Radius"
+        android:text="Number of Sides"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/diameter"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,27 +20,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/radiusTextField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radius" />
-
     <TextView
         android:id="@+id/diameter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Diameter"
+        android:layout_marginBottom="477dp"
+        android:text="Length of one side"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/diameterTextField"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
 
     <TextView
         android:id="@+id/circumference"
@@ -49,7 +39,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="16dp"
-        android:text="Circumference"
+        android:text="Radius to point"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/circumfrencetextfeild"
         app:layout_constraintEnd_toEndOf="@+id/circumfrencetextfeild" />
@@ -59,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="Area"
+        android:text="Radius to side"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/areaTextField"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,4 +87,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="267dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="157dp"
+        android:layout_marginBottom="15dp"
+        android:max="10"
+        android:progress="3"
+        app:layout_constraintBottom_toTopOf="@+id/diameter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

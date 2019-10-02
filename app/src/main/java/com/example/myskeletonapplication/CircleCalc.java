@@ -1,14 +1,17 @@
 package com.example.myskeletonapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.widget.EditText;
 import java.lang.Math;
 import java.util.Locale;
 
-public class CircleCalc extends AppCompatActivity  {
+public class CircleCalc extends AppCompatActivity{
 
     Double radius = 0d;
     Double diameter = 0d;
@@ -36,6 +39,8 @@ public class CircleCalc extends AppCompatActivity  {
         circumferenceTextField.addTextChangedListener(circumferenceWatcher);
         areaTextField.addTextChangedListener(areaWatcher);
 
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
     protected void changeValues(double rad, int given){
