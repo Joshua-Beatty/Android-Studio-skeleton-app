@@ -10,15 +10,13 @@
         android:id="@+id/radius"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="87dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginBottom="132dp"
         android:text="Number of Sides"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/diameter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/diameter"
@@ -36,20 +34,19 @@
         android:id="@+id/circumference"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="16dp"
-        android:text="Radius to point"
+        android:text="Apothem"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/circumfrencetextfeild"
-        app:layout_constraintEnd_toEndOf="@+id/circumfrencetextfeild" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/area"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="Radius to side"
+        android:text="Area"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/areaTextField"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,9 +93,22 @@
         android:layout_marginTop="157dp"
         android:layout_marginBottom="15dp"
         android:max="10"
-        android:progress="3"
+        android:progress="1"
         app:layout_constraintBottom_toTopOf="@+id/diameter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="23dp"
+        android:text="4"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radius" />
 </androidx.constraintlayout.widget.ConstraintLayout>
