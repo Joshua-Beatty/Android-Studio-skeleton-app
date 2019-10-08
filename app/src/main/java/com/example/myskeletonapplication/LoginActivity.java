@@ -4,20 +4,23 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.view.View;
 import android.widget.Button;
 import android.util.*;
+import android.widget.RelativeLayout;
 
 import com.example.myskeletonapplication.R;
 
 public class LoginActivity extends AppCompatActivity {
 
-
-
+    singleton single = singleton.getInstance();
+    ConstraintLayout relativeLayout;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        relativeLayout = findViewById(R.id.backg);
 
         setContentView(R.layout.activity_login);
         getSupportActionBar().setTitle("No More Geometry");
@@ -30,11 +33,25 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this, ChoseShape.class));
             }
         });
+        //bgChanger();
     }
     public void onStart() {
         super.onStart();
 
     }
+    public void bgChanger(){
+        if(single.darkMode){
+            relativeLayout.setBackgroundResource(R.drawable.bg);
 
+        } else {
+            relativeLayout.setBackgroundResource(R.drawable.white);
+        }
+
+    }
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        bgChanger();
+    }
 
 }

@@ -1,13 +1,18 @@
 package com.example.myskeletonapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
+
 import java.lang.Math;
 import java.util.Locale;
 
@@ -18,16 +23,17 @@ public class CircleCalc extends AppCompatActivity{
     Double circumference = 0d;
     Double area = 0d;
     Double pi = 3.14159d;
-
+    singleton single = singleton.getInstance();
     private EditText radiusTextField;
     private EditText diameterTextField;
     private EditText circumferenceTextField;
     private EditText areaTextField;
-
+    ConstraintLayout relativeLayout;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_circle_calc);
         getSupportActionBar().setTitle("No More Geometry");
+        relativeLayout = findViewById(R.id.backg);
 
         radiusTextField = findViewById(R.id.radiusTextField);
         diameterTextField = findViewById(R.id.diameterTextField);
@@ -39,7 +45,13 @@ public class CircleCalc extends AppCompatActivity{
         diameterTextField.addTextChangedListener(diameterWatcher);
         circumferenceTextField.addTextChangedListener(circumferenceWatcher);
         areaTextField.addTextChangedListener(areaWatcher);
+        bgChanger();
 
+    }
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        bgChanger();
     }
     protected void changeValues(double rad, int given){
         radius = rad;
@@ -147,4 +159,29 @@ public class CircleCalc extends AppCompatActivity{
 
         public void afterTextChanged(Editable s) {}
     };
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.mymenu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    // handle button activities
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.mybutton) {
+            startActivity(new Intent(CircleCalc.this, SettingsActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    public void bgChanger(){
+        if(single.darkMode){
+            relativeLayout.setBackgroundResource(R.drawable.bg);
+
+        } else {
+            relativeLayout.setBackgroundResource(R.drawable.white);
+        }
+
+    }
 }

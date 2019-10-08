@@ -1,20 +1,25 @@
 package com.example.myskeletonapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.Locale;
 
 public class SquareCalc extends AppCompatActivity{
-
+    singleton single = singleton.getInstance();
     Double radius = 0d;
     Double circumference = 0d;
     Double area = 0d;
-
+    ConstraintLayout relativeLayout;
     private EditText radiusTextField;
     private EditText circumferenceTextField;
     private EditText areaTextField;
@@ -32,8 +37,15 @@ public class SquareCalc extends AppCompatActivity{
         radiusTextField.addTextChangedListener(radiusWatcher);
         circumferenceTextField.addTextChangedListener(circumferenceWatcher);
         areaTextField.addTextChangedListener(areaWatcher);
+        relativeLayout = findViewById(R.id.backg);
+        bgChanger();
 
 
+    }
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        bgChanger();
     }
     protected void changeValues(double rad, int given){
         radius = rad;
@@ -119,4 +131,29 @@ public class SquareCalc extends AppCompatActivity{
 
         public void afterTextChanged(Editable s) {}
     };
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.mymenu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    // handle button activities
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.mybutton) {
+            startActivity(new Intent(SquareCalc.this, SettingsActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    public void bgChanger(){
+        if(single.darkMode){
+            relativeLayout.setBackgroundResource(R.drawable.bg);
+
+        } else {
+            relativeLayout.setBackgroundResource(R.drawable.white);
+        }
+
+    }
 }
