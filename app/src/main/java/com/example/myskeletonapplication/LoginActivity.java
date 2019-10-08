@@ -20,7 +20,6 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        relativeLayout = findViewById(R.id.backg);
 
         setContentView(R.layout.activity_login);
         getSupportActionBar().setTitle("No More Geometry");
@@ -33,7 +32,8 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this, ChoseShape.class));
             }
         });
-        //bgChanger();
+        relativeLayout = findViewById(R.id.backg);
+        bgChanger();
     }
     public void onStart() {
         super.onStart();

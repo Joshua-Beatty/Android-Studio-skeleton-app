@@ -24,6 +24,11 @@ public class SettingsActivity extends AppCompatActivity implements CompoundButto
         mySwitch = (Switch) findViewById(R.id.switch1);
         mySwitch.setOnCheckedChangeListener(this);
         bgChanger();
+        if(single.darkMode){
+            mySwitch.setChecked(true);
+        } else {
+            mySwitch.setChecked(false);
+        }
     }
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
