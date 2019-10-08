@@ -40,7 +40,7 @@ public class ChoseShape extends AppCompatActivity {
                 public void onClick(View v) {
                     // Code here executes on main thread after user presses button
                     Log.d("debugging", "Clicked");
-             //       startActivity(new Intent(ChoseShape.this, SquareCalc.class));
+                    startActivity(new Intent(ChoseShape.this, SquareCalc.class));
                 }
             });
     }
